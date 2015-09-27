@@ -31,7 +31,7 @@ var chart = realTimeChart()
 // invoke the chart
 var chartDiv = d3.select("#viewDiv").append("div")
     .attr("id", "chartDiv")
-    .call(chart)
+    .call(chart);
 
 // create new data item and inject into chart
 var now = new Date();
@@ -41,7 +41,7 @@ var obj = {
   color: "red",
   ts: now.getTime(),
   interval: timeout
-}
+};
 
 // send the datum to the chart
 chart.datum(obj);
