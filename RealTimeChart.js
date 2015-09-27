@@ -79,10 +79,9 @@ function realTimeChart() {
         .style("fill", "#f5f5f5");
 
     // note that two groups are created here, the latter assigned to barG;
-    // the former will contain a clip path to constrain shapes to the chart area
-    // (which is not really needed as the data later will be clipped to the
-    // chart area); no equivalent clip path is created for the nav chart (of
-    // the same reason)
+    // the former will contain a clip path to constrain objects to the chart area; 
+    // no equivalent clip path is created for the nav chart as the data itself
+    // is clipped to the full time domain
     var barG = main.append("g")
         .attr("class", "barGroup")
         .attr("transform", "translate(0, 0)")
