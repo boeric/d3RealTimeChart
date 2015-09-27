@@ -17,8 +17,8 @@ function realTimeChart() {
       drawXAxis = true, drawYAxis = true, drawNavChart = true,
       border,
       selection,
-      barId = 0,
-      nav = "very much defined";
+      barId = 0;
+      //nav = "very much defined";
 
   // create the chart
   var chart = function(s) {
@@ -428,11 +428,8 @@ function realTimeChart() {
     return chart;       
   }
 
-  chart.version = function() {
-    return version;
-  }
+  chart.version = version;
   
- 
   return chart;
 
 } // end realTimeChart function
