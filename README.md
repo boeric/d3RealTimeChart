@@ -5,14 +5,16 @@ The real time chart is a resuable Javascript component that accepts real time da
 The component adheres to the pattern described in [Towards Reusable Chart](http://bost.ocks.org/mike/chart/). 
 
 The following options are currently supported:
+
 - **width** and **height** in pixels (Number)
 - **border** (Boolean)
 - **title**, **xTitle**, **yTitle** (String)
 - **barWidth** in pixels (Number)
 
 Future options will include:
-– Scale domain of real time data (currently a domain of [0, 100] is assumed for the y scale)
-- Use of SVG rects, circles, paths etc. to represent data (in addition to bars)
+
+- **Scale** domain of real time data (currently a domain of [0, 100] is assumed for the y scale)
+- Use of SVG **rects, circles, paths** etc. to represent data (in addition to bars)
 
 Use the component like so:
 
