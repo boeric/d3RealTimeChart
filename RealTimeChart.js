@@ -18,7 +18,6 @@ function realTimeChart() {
       border,
       selection,
       barId = 0;
-      //nav = "very much defined";
 
   // create the chart
   var chart = function(s) {
@@ -60,7 +59,7 @@ function realTimeChart() {
 
     // create main group and translate
     var main = svg.append("g")
-        .attr("transform", "translate (" + margin.left + "," + marginTop + ")")
+        .attr("transform", "translate (" + margin.left + "," + marginTop + ")");
 
     // define clip-path
     main.append("defs").append("clipPath")
@@ -93,11 +92,11 @@ function realTimeChart() {
     // add group for x axis
     var xAxisG = main.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + height + ")");
 
     // add group for y axis
     var yAxisG = main.append("g")
-        .attr("class", "y axis")
+        .attr("class", "y axis");
 
     // in x axis group, add x axis title
     xAxisG.append("text")
@@ -143,7 +142,7 @@ function realTimeChart() {
 
     // add nav chart
     var nav = svg.append("g")
-        .attr("transform", "translate (" + margin.left + "," + marginTopNav + ")")
+        .attr("transform", "translate (" + margin.left + "," + marginTopNav + ")");
 
     // add nav background
     nav.append("rect")
@@ -153,20 +152,20 @@ function realTimeChart() {
         .attr("height", heightNav)
         .style("fill", "#F5F5F5")
         .style("shape-rendering", "crispEdges")
-        .attr("transform", "translate(0, 0)")
+        .attr("transform", "translate(0, 0)");
 
     // add group to hold line and area paths
     var navG = nav.append("g")
-        .attr("class", "nav")
+        .attr("class", "nav");
 
     // add group to hold nav x axis
     var xAxisGNav = nav.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + heightNav + ")")
+        .attr("transform", "translate(0," + heightNav + ")");
 
     // define nav scales
-    var xNav = d3.time.scale().range([0, widthNav])
-    var yNav = d3.scale.linear().domain([minY, maxY]).range([heightNav, 0])
+    var xNav = d3.time.scale().range([0, widthNav]);
+    var yNav = d3.scale.linear().domain([minY, maxY]).range([heightNav, 0]);
 
     // define nav axis
     var xAxisNav = d3.svg.axis().orient("bottom");
@@ -187,18 +186,15 @@ function realTimeChart() {
 
     // first, the full time domain
     var endTime = new Date(ts);
-    var startTime = new Date(endTime.getTime() - maxSeconds * 1000)
+    var startTime = new Date(endTime.getTime() - maxSeconds * 1000);
     var interval = endTime.getTime() - startTime.getTime();
 
     // then the viewport time domain (what's visible in the main chart 
     // and the viewport in the nav chart)
     var endTimeViewport = new Date(ts);
-    var startTimeViewport = new Date(endTime.getTime() - 
-        width / pixelsPerSecond * 1000);
-    var intervalViewport = endTimeViewport.getTime() - 
-        startTimeViewport.getTime();
-    var offsetViewport = startTimeViewport.getTime() - 
-        startTime.getTime();
+    var startTimeViewport = new Date(endTime.getTime() - width / pixelsPerSecond * 1000);
+    var intervalViewport = endTimeViewport.getTime() - startTimeViewport.getTime();
+    var offsetViewport = startTimeViewport.getTime() - startTime.getTime();
 
     // set the scale domains for main and nav charts
     x.domain([startTimeViewport, endTimeViewport]);
@@ -293,7 +289,7 @@ function realTimeChart() {
           .attr("id", function() { 
             return "bar-" + barId++; 
           })
-          .attr("shape-rendering", "crispEdges")
+          .attr("shape-rendering", "crispEdges");
 
       // update items
       updateSel
@@ -305,7 +301,7 @@ function realTimeChart() {
           //.style("stroke", "none")
           //.style("stroke-width", "1px")
           //.style("stroke-opacity", 0.5)
-          .style("fill-opacity", 1)
+          .style("fill-opacity", 1);
 
       // also, bind data to nav chart
       // first remove current paths
@@ -428,6 +424,7 @@ function realTimeChart() {
     return chart;       
   }
 
+  // version
   chart.version = version;
   
   return chart;
