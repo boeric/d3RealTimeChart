@@ -16,7 +16,7 @@ Future options will include:
 
 Use the component like so:
 
-`
+```
 // create the real time chart
 var chart = realTimeChart()
     .title("Chart Title")
@@ -45,4 +45,5 @@ var obj = {
 
 // send the datum to the chart
 chart.datum(obj);
-`
+
+```
