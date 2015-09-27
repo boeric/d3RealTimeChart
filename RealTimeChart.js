@@ -54,7 +54,7 @@ function realTimeChart() {
         .attr("width", svgWidth)
         .attr("height", svgHeight)
         .style("border", function(d) { 
-          if (border) return "1px solid black"; 
+          if (border) return "1px solid lightgray"; 
           else return null;
         });
 
